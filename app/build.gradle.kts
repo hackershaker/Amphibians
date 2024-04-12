@@ -54,7 +54,6 @@ android {
 }
 
 dependencies {
-
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
     implementation(libs.androidx.activity.compose)
@@ -63,26 +62,20 @@ dependencies {
     implementation(libs.androidx.ui.graphics)
     implementation(libs.androidx.ui.tooling.preview)
     implementation(libs.androidx.material3)
+    implementation(libs.retrofit2)
+    implementation(libs.coil.compose)
+    implementation(libs.kotlinx.serialization.json)
+    implementation(libs.retrofit2.kotlinx.serialization.converter)
+
     testImplementation(libs.junit)
+    testImplementation(platform(libs.junit.bom))
+    testImplementation(libs.kotlinx.coroutines.test)
+
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(platform(libs.androidx.compose.bom))
     androidTestImplementation(libs.androidx.ui.test.junit4)
+
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-    // Retrofit
-    implementation("com.squareup.retrofit2:retrofit:2.11.0")
-
-    // Coil
-    implementation("io.coil-kt:coil-compose:2.6.0")
-
-    // kotlin-serialization
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
-
-    //kotlin-serialization-converter
-    implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
-
-    testImplementation(platform("org.junit:junit-bom:5.10.2"))
-    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.8.0")
 }
